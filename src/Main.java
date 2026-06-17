@@ -1,7 +1,11 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Interface userInterface = new Interface();
-        userInterface.startMenu();
+        Scanner sncr = new Scanner(System.in);
+        StartMenu.startUpPage();
+
+
     }
 }
 

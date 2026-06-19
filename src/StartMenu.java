@@ -10,12 +10,8 @@ public class StartMenu {
                 "2. Create New Account\n" +
                 "3. Exit\n" +
                 "\n" +
-                "Enter your choice: ");
+                "Enter your choice: (1, 2, or 3)");
 
         return;
-    }
-
-    public void userLogin() {
-        
     }
 }

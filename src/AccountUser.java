@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class AccountUser {
+    private static int userId;
     private String firstName;
     private String lastName;
     private String username;
@@ -11,6 +12,7 @@ public class AccountUser {
         this.lastName = "No last name";
         this.username = "No username";
         this.password = "No password";
+        ++userId;
     }
 
     public void setFirstName(Scanner scanner) {
@@ -30,7 +32,7 @@ public class AccountUser {
         return lastName;
     }
 
-    public  boolean usernameValidation (String username) {
+    private boolean usernameValidation (String username) {
         boolean isValidusername;
 
         if (username.length() >= 12 && username.length() <= 24) {
@@ -48,15 +50,36 @@ public class AccountUser {
 
         while(!isValid) {
             System.out.println("Enter a username 12-24 characters long:");
-            String username = scanner.nextLine();
+            String enterUsername = scanner.nextLine();
 
-            if (usernameValidation(username)) {
-                this.username = username;
+            if (usernameValidation(enterUsername)) {
+                this.username = enterUsername;
                 isValid = true;
             } else {
                 System.out.println("Invalid username!");
                 System.out.println("**************************************");
             }
+        }
+    }
+
+    /*private boolean validatePassword(String password) { //FIXME CONTINUE DEVELOPING PASSWORD VALIDATION
+        boolean isValid = false;
+        final int MIN_PASSWORD_LENGTH = 12;
+        char[] arrayPassword = password.toCharArray();
+
+        return isValid; 
+    }*/
+
+    public void setPassword(Scanner scanner) {
+        System.out.println("Enter a password: (Must be at least 12 characters long, contain only letters, numbers, or special characters including: !, _, @)");
+        String userPassword = scanner.nextLine();
+
+        if (validatePassword(userPassword)) {
+            this.password = userPassword;
+        }
+        else {
+            System.out.println("Invalid password!");
+            System.out.println("**************************************");
         }
     }
 }

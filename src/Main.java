@@ -12,11 +12,12 @@ public class Main {
         scanner.nextLine();
 
         if (intInput == 2) {
-            AccountUser user1 = new AccountUser();
-            user1.setFirstName(scanner);
-            user1.setLastName(scanner);
-            user1.setUsername(scanner);
 
+            AccountUser user1 = new AccountUser();
+            //user1.setFirstName(scanner); FIXME UNCOMMENT
+            //user1.setLastName(scanner);   ****
+            //user1.setUsername(scanner);   FIXME UNCOMMENT
+            user1.setPassword(scanner);
 
 
 
